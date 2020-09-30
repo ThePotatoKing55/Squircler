@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17503.1" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17503.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Squircler" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Squircler" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Squircler" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Quit Squircler" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="jX3-5S-fWF">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" id="M2X-wp-Gh7">
+                                    <items>
+                                        <menuItem title="Close" keyEquivalent="w" id="qLd-hb-em0">
+                                            <connections>
+                                                <action selector="closeWindow:" target="Voe-Tx-rLC" id="gYK-Zp-VEC"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Squircler" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210" y="-61"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" customClass="ConfigWindowController" customModule="Squircler" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Squircler" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" tabbingMode="disallowed" titlebarAppearsTransparent="YES" toolbarStyle="compact" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" moveToActiveSpace="YES" transient="YES" ignoresCycle="YES" fullScreenNone="YES" fullScreenDisallowsTiling="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="334" height="334"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="206"/>
+        </scene>
+        <!--Config View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ConfigViewController" customModule="Squircler" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" id="uxr-YS-Qz0">
+                        <rect key="frame" x="0.0" y="0.0" width="334" height="334"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DmJ-Sv-VP4">
+                                <rect key="frame" x="20" y="20" width="294" height="314"/>
+                                <subviews>
+                                    <box wantsLayer="YES" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="rc0-to-US0">
+                                        <rect key="frame" x="-3" y="82" width="300" height="188"/>
+                                        <view key="contentView" id="cNw-7h-Oax">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="188"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sIK-ay-6qs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="188"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="sIK-ay-6qs" secondAttribute="height" multiplier="8:5" id="Uua-at-g2G"/>
+                                                        <constraint firstAttribute="width" constant="300" id="prD-MP-bKe"/>
+                                                    </constraints>
+                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="Big Sur Wallpaper" id="2ef-dK-BL1"/>
+                                                </imageView>
+                                                <visualEffectView wantsLayer="YES" blendingMode="withinWindow" material="menu" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="OFl-pu-q7f">
+                                                    <rect key="frame" x="0.0" y="183" width="300" height="5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="Yik-Ef-bnq"/>
+                                                    </constraints>
+                                                </visualEffectView>
+                                                <visualEffectView wantsLayer="YES" blendingMode="withinWindow" material="menu" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="Jio-Yb-Tkq">
+                                                    <rect key="frame" x="50" y="2" width="200" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="fGW-xg-xdX"/>
+                                                        <constraint firstAttribute="width" constant="200" id="iZO-pR-IPb"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </visualEffectView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jio-Yb-Tkq" firstAttribute="centerX" secondItem="cNw-7h-Oax" secondAttribute="centerX" id="1dU-nq-Phb"/>
+                                                <constraint firstItem="OFl-pu-q7f" firstAttribute="top" secondItem="cNw-7h-Oax" secondAttribute="top" id="2a4-rD-yo1"/>
+                                                <constraint firstItem="OFl-pu-q7f" firstAttribute="leading" secondItem="cNw-7h-Oax" secondAttribute="leading" id="2yF-pG-DXj"/>
+                                                <constraint firstItem="sIK-ay-6qs" firstAttribute="leading" secondItem="cNw-7h-Oax" secondAttribute="leading" id="94Z-y2-aLY"/>
+                                                <constraint firstAttribute="trailing" secondItem="sIK-ay-6qs" secondAttribute="trailing" id="DKE-Ez-S7d"/>
+                                                <constraint firstAttribute="bottom" secondItem="sIK-ay-6qs" secondAttribute="bottom" id="UJX-ug-dSA"/>
+                                                <constraint firstAttribute="trailing" secondItem="OFl-pu-q7f" secondAttribute="trailing" id="fkm-Bp-KEQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jio-Yb-Tkq" secondAttribute="bottom" constant="2" id="pWE-6Y-oAU"/>
+                                                <constraint firstItem="sIK-ay-6qs" firstAttribute="top" secondItem="cNw-7h-Oax" secondAttribute="top" id="xxi-YN-uhr"/>
+                                            </constraints>
+                                        </view>
+                                    </box>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-8n-8Q4">
+                                        <rect key="frame" x="0.0" y="22" width="151" height="62"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPc-pV-mhl">
+                                                <rect key="frame" x="-2" y="22" width="51" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" allowsUndo="NO" title="Radius" id="jnE-ku-idN">
+                                                    <font key="font" textStyle="title3" name=".SFNS-Regular"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField wantsLayer="YES" verticalHuggingPriority="750" preferredMaxLayoutWidth="32" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyk-t4-fGU">
+                                                <rect key="frame" x="55" y="20" width="96" height="22"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="24.0" usesSingleLineMode="YES" bezelStyle="round" id="ihR-QG-gsZ">
+                                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Uly-S4-TPR"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gyk-t4-fGU" firstAttribute="top" secondItem="jeX-8n-8Q4" secondAttribute="top" constant="20" symbolic="YES" id="cUC-dK-VT2"/>
+                                            <constraint firstAttribute="bottom" secondItem="gyk-t4-fGU" secondAttribute="bottom" constant="20" symbolic="YES" id="oMG-Ry-lDc"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <real value="998"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wit-d8-9Zm">
+                                        <rect key="frame" x="-2" y="-6" width="298" height="28"/>
+                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="900" doubleValue="24" tickMarkPosition="above" sliderType="linear" id="V0i-Rz-uJQ"/>
+                                    </slider>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="0.0" right="0.0" top="46" bottom="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rc0-to-US0" secondAttribute="trailing" id="HDF-LR-vZq"/>
+                                    <constraint firstItem="rc0-to-US0" firstAttribute="leading" secondItem="DmJ-Sv-VP4" secondAttribute="leading" id="ZXI-HM-lmw"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="DmJ-Sv-VP4" firstAttribute="leading" secondItem="uxr-YS-Qz0" secondAttribute="leading" constant="20" symbolic="YES" id="f1M-BC-pPC"/>
+                            <constraint firstAttribute="bottom" secondItem="DmJ-Sv-VP4" secondAttribute="bottom" constant="20" symbolic="YES" id="fSZ-Qq-kTH"/>
+                            <constraint firstItem="DmJ-Sv-VP4" firstAttribute="top" secondItem="uxr-YS-Qz0" secondAttribute="top" id="moz-7f-3Qq"/>
+                            <constraint firstAttribute="trailing" secondItem="DmJ-Sv-VP4" secondAttribute="trailing" constant="20" symbolic="YES" id="xFw-wj-ZPB"/>
+                        </constraints>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="field" destination="gyk-t4-fGU" id="CFk-FN-k3L"/>
+                        <outlet property="imageView" destination="sIK-ay-6qs" id="G1J-Ov-04i"/>
+                        <outlet property="previewBox" destination="rc0-to-US0" id="DXx-cP-AYf"/>
+                        <outlet property="slider" destination="Wit-d8-9Zm" id="F7I-Bo-W0E"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="w2P-GA-ZbN"/>
+            </objects>
+            <point key="canvasLocation" x="229" y="705"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Big Sur Wallpaper" width="300" height="300"/>
+    </resources>
+</document>
