@@ -25,16 +25,16 @@ struct Defaults {
     
     static var screenCornerRadius: Float {
         get {
-            Defaults.hasSetRadius ? userDefaults.float(for: .screenCornerRadius) : defaultScreenCornerRadius
+            Defaults._hasSetRadius ? userDefaults.float(for: .screenCornerRadius) : defaultScreenCornerRadius
         }
         set {
             userDefaults.set(newValue < 0 ? defaultScreenCornerRadius : newValue, for: .screenCornerRadius)
             NotificationCenter.default.post(name: .setScreenCornerRadius, object: nil)
-            Defaults.hasSetRadius = true
+            Defaults._hasSetRadius = true
         }
     }
     
-    static var hasSetRadius: Bool {
+    static private var _hasSetRadius: Bool {
         get {
             userDefaults.bool(for: .hasSetRadius)
         }
