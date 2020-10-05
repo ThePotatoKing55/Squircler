@@ -21,7 +21,7 @@ struct Defaults {
     
     private init() {}
     
-    static let defaultScreenCornerRadius: Float = 20.0
+    static let defaultScreenCornerRadius: Float = 10.0
     
     static var screenCornerRadius: Float {
         get {
