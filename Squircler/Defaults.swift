@@ -11,9 +11,9 @@ extension Notification.Name {
     static let setScreenCornerRadius = Notification.Name(rawValue: "setScreenCornerRadius")
 }
 
-struct Defaults {
+public struct Defaults {
     
-    typealias Key = UserDefaults.Key
+    public typealias Key = UserDefaults.Key
     
     private static var userDefaults: UserDefaults {
         UserDefaults.standard
@@ -21,20 +21,20 @@ struct Defaults {
     
     private init() {}
     
-    static let defaultScreenCornerRadius: Float = 10.0
+    public static let defaultScreenCornerRadius: Float = 10.0
     
-    static var screenCornerRadius: Float {
+    public static var screenCornerRadius: Float {
         get {
-            Defaults._hasSetRadius ? userDefaults.float(for: .screenCornerRadius) : defaultScreenCornerRadius
+            Defaults.hasSetRadius ? userDefaults.float(for: .screenCornerRadius) : defaultScreenCornerRadius
         }
         set {
             userDefaults.set(newValue < 0 ? defaultScreenCornerRadius : newValue, for: .screenCornerRadius)
             NotificationCenter.default.post(name: .setScreenCornerRadius, object: nil)
-            Defaults._hasSetRadius = true
+            Defaults.hasSetRadius = true
         }
     }
     
-    static private var _hasSetRadius: Bool {
+    public private(set) static var hasSetRadius: Bool {
         get {
             userDefaults.bool(for: .hasSetRadius)
         }
@@ -46,8 +46,13 @@ struct Defaults {
 }
 
 extension UserDefaults {
-    public enum Key: String, CaseIterable {
-        case screenCornerRadius, hasSetRadius
+    public enum Key: String, CaseIterable, ExpressibleByStringLiteral {
+        case screenCornerRadius, hasSetRadius, unknown
+        
+        public init(stringLiteral value: StringLiteralType) {
+            guard let key = Key(rawValue: value) else { self = .unknown; return }
+            self = key
+        }
     }
     
     public func float(for key: Key) -> Float {
