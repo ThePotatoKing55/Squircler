@@ -36,7 +36,7 @@ class RoundingWindowController: NSWindowController {
     
     func configure(window: RoundingWindow) {
         guard let screen = window.screen else { fatalError("Rounding window doesn't have an associated screen; can't configure!") }
-        window.level = .mainMenu + 2
+        window.level = .screenSaver + 1
         window.styleMask = [.borderless]
         window.backgroundColor = .clear
         window.ignoresMouseEvents = true
